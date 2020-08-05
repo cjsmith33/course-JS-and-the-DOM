@@ -1,44 +1,58 @@
 // My code goes hero__video
 
+document.addEventListener('DOMContentLoaded', function () {
+    console.log('the DOM is ready to be interacted with!');
+});
 
+//example: DOMContentLoaded - best use:
+// <!DOCTYPE html>
+// <html lang="en">
+// <head>
+//     <link rel="stylesheet" href="/css/styles.css" />
+//     <script>
+//       document.addEventListener('DOMContentLoaded', function () {
+//           document.querySelector('footer').style.backgroundColor = 'purple';
+//       });
+//     </script>
+//***********************************
 
 // So event.target gives us direct access to the paragraph element that was clicked.
 // Because we have access to the element directly, we can access its .textContent,
 // modify its styles, update the classes it has - we can do anything we want
 // to it!
 
-const myCustomDiv = document.createElement('div');
-
-function respondToTheClick(evt) {
-    console.log('A paragraph was clicked: ' + evt.target.textContent);
-}
-
-for (let i = 1; i <= 200; i++) {
-    const newElement = document.createElement('p');
-    newElement.textContent = 'This is paragraph number ' + i;
-
-    myCustomDiv.appendChild(newElement);
-}
-
-document.body.appendChild(myCustomDiv);
-
-myCustomDiv.addEventListener('click', respondToTheClick);
-
-document.querySelector('#content').addEventListener('click', function (evt) {
-    if (evt.target.nodeName === 'SPAN') {  // ← verifies target is desired element
-        console.log('A span was clicked with text ' + evt.target.textContent);
-    }
-});
-
-// check using capital letters
-if (evt.target.nodeName === 'SPAN') {
-    console.log('A span was clicked with text ' + evt.target.textContent);
-}
-
-> // convert nodeName to lowercase
-if (evt.target.nodeName.toLowerCase() === 'span') {
-    console.log('A span was clicked with text ' + evt.target.textContent);
-}
+// const myCustomDiv = document.createElement('div');
+//
+// function respondToTheClick(evt) {
+//     console.log('A paragraph was clicked: ' + evt.target.textContent);
+// }
+//
+// for (let i = 1; i <= 200; i++) {
+//     const newElement = document.createElement('p');
+//     newElement.textContent = 'This is paragraph number ' + i;
+//
+//     myCustomDiv.appendChild(newElement);
+// }
+//
+// document.body.appendChild(myCustomDiv);
+//
+// myCustomDiv.addEventListener('click', respondToTheClick);
+//
+// document.querySelector('#content').addEventListener('click', function (evt) {
+//     if (evt.target.nodeName === 'SPAN') {  // ← verifies target is desired element
+//         console.log('A span was clicked with text ' + evt.target.textContent);
+//     }
+// });
+//
+// // check using capital letters
+// if (evt.target.nodeName === 'SPAN') {
+//     console.log('A span was clicked with text ' + evt.target.textContent);
+// }
+//
+// > // convert nodeName to lowercase
+// if (evt.target.nodeName.toLowerCase() === 'span') {
+//     console.log('A span was clicked with text ' + evt.target.textContent);
+// }
 
 
 // **************************
